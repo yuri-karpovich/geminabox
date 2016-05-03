@@ -4,7 +4,8 @@ Docker Geminabox image
 `geminabox` is a very simple private rubygems server where you can store your private gems.  
 This is a Debian based image with [Geminabox](https://github.com/geminabox/geminabox) listening on port 9292. 
 
-> Also check out my [gemtoabox](https://github.com/yuri-karpovich/gemtoabox) Ruby gem. 
+####Gemtoabox
+Also check out my [gemtoabox](https://github.com/yuri-karpovich/gemtoabox) Ruby gem. 
 It can backup all gems (including dependencies) from your project Gemfile to the `geminabox` server.
 
 Quickstart
