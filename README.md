@@ -7,20 +7,30 @@ Quickstart
 ----------
 	
 	docker run -d -p 9292:9292 --name geminabox spoonest/geminabox:latest
+	
+Authentication
+--------------
 
-By default, there is no authentication on **upload**. To enable it pass variable environment:
+You can limit **upload** and **remove** access by adding `-e USERNAME=myuser -e PASSWORD=mypassword` variables right after `run` command. 
 
 	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
 
-If you need private repository with restricted access add `PRIVATE=true` variable.
+Also you can limit any access to your repository by adding `-e PRIVATE=true` variables right after `run` command.
 
-	docker run -d --name geminabox -e RUBYGEMS_PROXY=true -e PRIVATE=true -v /home/spoonest/Documents/Projects/PrivateGemRepo/gems:/webapps/geminabox/data -p 9292:9292 -P -h geminabox -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+
+Folder to store saved gems
+--------------------------
+
+It's recommended to store saved gems outside your docker container. Use docker volumes `-v` to specify storage location: 
+
+	docker run -d -v /home/spoonest/Documents/Projects/PrivateGemRepo/gems:/webapps/geminabox/data --name geminabox -p 9292:9292 -P -h geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
 
 If you need to enter in the app, use docker exec since Docker 1.3 https://github.com/ahmet2mir/docker-memo
 
     docker exec -it geminabox /bin/bash
 
-Then visit http://localhost:9292
+Then visit [http://localhost:9292](http://localhost:9292)
 
 Configuration
 -------------
@@ -45,7 +55,8 @@ Output are in docker log collect
 
 -f like tail -f
 
-### Thanks
+Thanks
+------
 Thanks [ahmet2mir](https://github.com/ahmet2mir) for this image.
 
 
