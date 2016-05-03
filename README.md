@@ -24,7 +24,7 @@ Folder to store saved gems
 
 It's recommended to store saved gems outside your docker container. Use docker volumes `-v` to specify storage location: 
 
-	docker run -d -v /home/spoonest/Documents/Projects/PrivateGemRepo/gems:/webapps/geminabox/data --name geminabox -p 9292:9292 -P -h geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+	docker run -d -v /path_where_to_store_gems:/webapps/geminabox/data --name geminabox -p 9292:9292 -P -h geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
 
 If you need to enter in the app, use docker exec since Docker 1.3 https://github.com/ahmet2mir/docker-memo
 
