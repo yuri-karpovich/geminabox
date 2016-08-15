@@ -45,6 +45,18 @@ Then tun following command:
 
     gem inabox gem-0.0.1.gem -g http://USERNAME:PASSWORD@HOST:9292
 
+Install Gems from private repository
+------------------------------------
+
+Add following line to `Gemfile`:
+
+    source 'hhttp://USERNAME:PASSWORD@HOST:9292'
+
+Proxy to RubyGems
+-----------------
+
+Geminabox can be configured to pull gems, it does not currently have, from rubygems.org. I recommend to enable it - set `-e RUBYGEMS_PROXY=true`.
+
 Configuration
 -------------
 
