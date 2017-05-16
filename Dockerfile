@@ -1,5 +1,6 @@
 FROM ruby:2.2
 
+RUN apt-get update
 RUN apt-get install -y unicorn
 RUN gem install --no-ri --no-rdoc geminabox -v 0.13.1
 
