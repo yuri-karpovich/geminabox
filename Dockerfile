@@ -11,7 +11,7 @@ RUN echo "deb http://ftp.fr.debian.org/debian $RELEASE main contrib non-free" > 
     && apt-get update 
 
 RUN apt-get install -y --no-install-recommends ruby rubygems-integration ruby-dev unicorn
-RUN gem install --no-ri --no-rdoc geminabox
+RUN gem install --no-ri --no-rdoc geminabox -v 0.13.4
 
 RUN mkdir -p /webapps/geminabox/config && \
 	mkdir -p /webapps/geminabox/data
