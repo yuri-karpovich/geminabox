@@ -6,7 +6,6 @@ RUN mkdir -p /webapps/geminabox/config && \
 
 RUN mkdir -p /tmp
 RUN chmod o+t /tmp
-RUN chmod 1777 /tmp
 
 WORKDIR /webapps/geminabox/config
 COPY assets/conf/config.ru /webapps/geminabox/config/config.ru
