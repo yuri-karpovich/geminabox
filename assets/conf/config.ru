@@ -1,4 +1,3 @@
-require "rubygems"
 require "geminabox"
 
 Geminabox.allow_replace = !!ENV['ALLOW_REPLACE']
