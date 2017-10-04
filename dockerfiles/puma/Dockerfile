@@ -1,6 +1,6 @@
 FROM ruby:2.3.4
 
-RUN gem install --no-ri --no-rdoc geminabox -v 0.13.5
+RUN gem install --no-ri --no-rdoc geminabox -v 0.13.9
 RUN mkdir -p /webapps/geminabox/config && \
 	mkdir -p /webapps/geminabox/data
 
