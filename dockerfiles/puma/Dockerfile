@@ -10,7 +10,7 @@ RUN chmod o+t /tmp
 RUN gem install --no-ri --no-rdoc puma
 
 WORKDIR /webapps/geminabox/config
-COPY assets/conf/config.ru /webapps/geminabox/config/config.ru
+COPY ../../assets/conf/config.ru /webapps/geminabox/config/config.ru
 
 EXPOSE 9292
 ENTRYPOINT ["puma", "-p", "9292", "-e", "production"]
