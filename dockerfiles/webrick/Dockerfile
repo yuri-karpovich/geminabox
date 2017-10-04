@@ -8,7 +8,7 @@ RUN mkdir -p /tmp
 RUN chmod o+t /tmp
 
 WORKDIR /webapps/geminabox/config
-COPY ../../assets/conf/config.ru /webapps/geminabox/config/config.ru
+COPY assets/conf/config.ru /webapps/geminabox/config/config.ru
 
 EXPOSE 9292
 ENTRYPOINT ["rackup", "--host", "0.0.0.0"]
