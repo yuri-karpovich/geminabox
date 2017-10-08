@@ -12,6 +12,9 @@ RUN gem install --no-ri --no-rdoc unicorn
 WORKDIR /webapps/geminabox/config
 COPY assets/conf/config.ru /webapps/geminabox/config/config.ru
 
+# default server config
+COPY assets/server_config/config.ru /webapps/server/config/config.ru
 
-EXPOSE 9292
-ENTRYPOINT ["unicorn", "-p", "9292"]
+COPY assets/entrypoint.sh /webapps/server
+
+ENTRYPOINT ["/webapps/server/entrypoint.sh"]
